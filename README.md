@@ -41,6 +41,8 @@ This allowed for a much more predictable and controlled game-flow. A scoring and
 
 > On **December 3rd, 2019** added some polish via CSS, realized that MVP had been met, and tuned math to result in a significantly more playable game. Added sounds.
 
+> On **December 4th, 2019** Added game over functionality!
+
 ### If I had more time I would...
 
 > Further smooth out the difficulty curve, recruit playtesters to see if actual play time reflects theoretical play time. Much of what I had struggled with, math-wise, was likely due to only having one play-tester, and it was me.
