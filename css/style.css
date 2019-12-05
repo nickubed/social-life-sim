@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0fffd;
+}
+.container {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 54px;
+}
+
+.content {
+    padding-bottom: 24px;
+}
+
+#game{
+    display: inline-block;
+    border: solid 9px #cccccc;
+    border-radius: 8px;
+    height: 623px;
+    width: 350px;
+}
+table {
+    text-align: center;
+}
+
+.row {
+    padding-bottom: 60px;
+}
+
+footer {
+    color: #f0fffd;
+    display: block;
+    position: absolute;
+    font-size: 18px;
+    height: 64px;
+    width: 100%;
+    bottom: -60;
+    margin-top: 15px;
+    background-color:#cccccc;
+    text-align: left;
+    overflow: hidden;
+  }
