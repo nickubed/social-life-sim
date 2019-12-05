@@ -21,7 +21,7 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
     game.load.image('tongueOut', './assets/images/tongueOut.png')
     game.load.image('foxFace', './assets/images/foxFace.png')
     //Load all sounds
-    game.load.audio('music', './assets/sounds/outsideClip.mp3')
+    game.load.audio('music', './assets/sounds/iceFishing.mp3')
     game.load.audio('damage', './assets/sounds/phoneDead.mp3')
     game.load.audio('send', './assets/sounds/messageSend.mp3')
     //Load font
@@ -32,7 +32,6 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
   function create() {
     // Create the background
       let background = game.add.tileSprite(0, 0, GAME_WIDTH, GAME_HEIGHT, 'bg')
-  
     //Initialize EMOJI array
       EMOJI.push(new Emoji('cryLaughing', 'cryLaughing'))
       EMOJI.push(new Emoji('pleadingFace', 'pleadingFace'))
@@ -59,6 +58,7 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
       cursors = game.input.keyboard.createCursorKeys()
     // Initial Text (display life, score)
       initializeText()
+      music.play()
   }
 
   function update(){

@@ -19,8 +19,24 @@ const spawnTargets = () => {
     numTargets = spawnRefine(level)
     //Loops through our number of enemies, creates a target at a random x value along a determined y value and sends it downward
     for(let i = 0; i < numTargets; i++){
-        let target = targets.create(SPAWN_COORD[Math.floor(Math.random() * 5)], 80, EMOJI[Math.floor(Math.random() * EMOJI.length)].src)
+        //Packs the spawn coordinate into a more usable variable name
+        let currentSpawn = SPAWN_COORD[Math.floor(Math.random() * SPAWN_COORD.length)]
+        //Packs the coordinates of the currentSpawn into an identifiable index for later access
+        let coordIndex = (SPAWN_COORD.indexOf(currentSpawn))
+        //Decides where the target will spawn and gives it an emoji
+        let target = targets.create(currentSpawn, 80, EMOJI[Math.floor(Math.random() * EMOJI.length)].src)
+        //Takes the coordinate that was just used and stores it inside a separate array
+        COORD_DELAY.push(SPAWN_COORD[coordIndex])
+        //Then removes it from the original array, so that it can't be used again.
+        SPAWN_COORD.splice(coordIndex, 1) 
+        console.log(`Inactive Array: ${COORD_DELAY}, Active Array: ${SPAWN_COORD}`)
+        //Releases the emoji
         target.body.velocity.y = (Math.floor(Math.random() * 50) + ((level / 2) * 25))
+        const refillSpawn = () => {
+            SPAWN_COORD.push(COORD_DELAY[0])
+            COORD_DELAY.splice(0, 1)
+        }
+        setInterval(refillSpawn(), 500)
     }
 }
 
@@ -53,3 +69,4 @@ const removeHealth = (userObj, targetObj) => {
     } //Remove the impacting target from the field.
     
 }
+
