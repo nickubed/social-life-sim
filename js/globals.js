@@ -18,4 +18,3 @@ let scoreText = 0
 let lifeText
 let targets
 let user
-let gameOn = true
