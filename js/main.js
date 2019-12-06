@@ -24,6 +24,7 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
     game.load.audio('music', './assets/sounds/iceFishing.mp3')
     game.load.audio('damage', './assets/sounds/phoneDead.mp3')
     game.load.audio('send', './assets/sounds/messageSend.mp3')
+    game.load.audio('ruffRyder', './assets/sounds/ruffRyder.mp3')
     //Load font
     game.load.bitmapFont('carrierCommand', './assets/fonts/carrier_command.png', './assets/fonts/carrier_command.xml')
 
@@ -39,12 +40,13 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
       music = game.add.audio('music')
       damage = game.add.audio('damage')
       send = game.add.audio('send')
+      ruffRyder = game.add.audio('ruffRyder')
     // Create the user Emoji and place it inside the track
       user = game.add.sprite(Math.floor(GAME_WIDTH / 2), 514, `${EMOJI[currentEmoji].src}`)
       game.physics.arcade.enable(user)
       user.body.collideWorldBounds = true
       user.life = STARTING_LIFE
-      user.score = 0
+      user.score = 650
 
     // Create target Emoji, destroy when they leave the screen
       targets = game.add.group()
@@ -107,6 +109,10 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
       }
       if(level === 13){
         EMOJI.push(new Emoji('foxFace', 'foxFace'))
+      }
+      if(level === 15){
+        music.stop()
+        ruffRyder.play()
       }
       updateLevelText()
     }
