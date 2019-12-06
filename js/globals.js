@@ -13,10 +13,10 @@ const USER_SPEED = 220
 //Globals
 let currentEmoji = 0
 let delay = 0
-let level = 14
+let level = 1
 let music
 let nextTargetWave = 0, nextEmojiSwitch = 0;
-let scoreText = 700
+let scoreText = 0
 let lifeText
 let targets
 let user

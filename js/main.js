@@ -46,7 +46,7 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
       game.physics.arcade.enable(user)
       user.body.collideWorldBounds = true
       user.life = STARTING_LIFE
-      user.score = 650
+      user.score = 0
 
     // Create target Emoji, destroy when they leave the screen
       targets = game.add.group()
