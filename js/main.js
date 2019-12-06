@@ -53,6 +53,9 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
       targets.createMultiple(5, `${EMOJI[currentEmoji].src}`)
       targets.setAll('outOfBoundsKill', true)
       targets.setAll('checkWorldBounds', true)
+      // targets.forEach(t => {
+      //   t.body.bounce.set(0.8, 0.8)
+      // })
 
     // Keyboard Listeners
       cursors = game.input.keyboard.createCursorKeys()
@@ -109,14 +112,21 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
     }
     updateConstantText()
     //Launch target waves
-    if (user.life > 0 && nextTargetWave <= game.time.totalElapsedSeconds()){
+    if (user.life > 0){
+      game.physics.arcade.overlap(user, targets, handleScore)
+  
+      game.physics.arcade.collide(targets, targets, (a, b) => {
+        a.body.velocity.y += 10
+        b.body.velocity.y -= 10
+      })
+      if(nextTargetWave <= game.time.totalElapsedSeconds()){
       spawnTargets()
-      nextTargetWave = game.time.totalElapsedSeconds() + Math.random() + ((level / (level * 2)) + 3)
+      nextTargetWave = game.time.totalElapsedSeconds() + Math.random() + ((level / (level * 2)) + 1)
+      }
     }
     else if (user.life <= 0) {
       spawnTargets()
       nextTargetWave = game.time.totalElapsedSeconds() / 2
     }
     //Point accrual / collision detect.
-    game.physics.arcade.overlap(user, targets, handleScore)
   }

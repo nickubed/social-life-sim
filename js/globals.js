@@ -4,6 +4,7 @@ const EMOJI = []
 const GAME_HEIGHT = 623
 const GAME_WIDTH = 350
 const LEVEL_INCREMENT = 50
+// const SPAWN_COORD = [0, 70]
 const SPAWN_COORD = [0, 70, 140, 210, 280]
 const STARTING_LIFE = 5
 const SWITCH_EMOJI_DELAY = 0.2

@@ -29,9 +29,8 @@ const spawnTargets = () => {
         COORD_DELAY.push(SPAWN_COORD[coordIndex])
         //Then removes it from the original array, so that it can't be used again.
         SPAWN_COORD.splice(coordIndex, 1) 
-        console.log(`Inactive Array: ${COORD_DELAY}, Active Array: ${SPAWN_COORD}`)
         //Releases the emoji
-        target.body.velocity.y = (Math.floor(Math.random() * 50) + ((level / 2) * 25))
+        target.body.velocity.y = (Math.floor(Math.random() * 75) + ((level / 2) * 25))
         const refillSpawn = () => {
             SPAWN_COORD.push(COORD_DELAY[0])
             COORD_DELAY.splice(0, 1)
