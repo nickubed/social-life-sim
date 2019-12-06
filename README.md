@@ -45,6 +45,8 @@ This allowed for a much more predictable and controlled game-flow. A scoring and
 
 > On **December 5th, 2019** Added music, tuned spawn rate.
 
+> On **December 6th, 2019** Added a text display that tells you that you have earned an emoji when that interval triggers.
+
 ### If I had more time I would...
 
 > Further smooth out the difficulty curve, recruit playtesters to see if actual play time reflects theoretical play time. Much of what I had struggled with, math-wise, was likely due to only having one play-tester, and it was me.
