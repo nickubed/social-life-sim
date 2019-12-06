@@ -103,12 +103,18 @@ let game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, "game", {
       level++
       if(level === 3){
         EMOJI.push(new Emoji('starEyes', 'starEyes'))
+        postEmojiText()
+        setTimeout(removeEmojiText, 2000)
       }
       if(level === 7){
         EMOJI.push(new Emoji('tongueOut', 'tongueOut'))
+        postEmojiText()
+        setTimeout(removeEmojiText, 2000)
       }
       if(level === 13){
         EMOJI.push(new Emoji('foxFace', 'foxFace'))
+        postEmojiText()
+        setTimeout(removeEmojiText, 2000)
       }
       if(level === 15){
         music.stop()

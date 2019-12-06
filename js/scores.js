@@ -9,6 +9,7 @@ const initializeText = () => {
     lifeText.tint = '0x000000'
     levelText = game.add.bitmapText(GAME_WIDTH / 2 - 45, 32, 'carrierCommand', `Level: ${level}`, 10)
     levelText.tint = '0x000000'
+
 }
 
 const gameOver = () => {
@@ -32,4 +33,15 @@ const updateConstantText = () => {
 //Updates level text
 const updateLevelText = () => {
     levelText.text = `Level: ${level}`
+}
+
+//Tells you when you've earned an emoji!
+const postEmojiText = () =>{
+    //looks like bitmaptext can't handle emoji glyphs... 
+    emojiText = game.add.bitmapText(GAME_WIDTH / 2 - 150, 260, 'carrierCommand', `You've earned a new emoji!`, 10)
+    emojiText.tint = '0x000000'
+}
+
+const removeEmojiText = () =>{
+    emojiText.text = ''
 }
